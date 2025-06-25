@@ -21,9 +21,15 @@
         <i class="fas fa-moon"></i>
     </button>
 
-    <a href="https://wa.me/6282110203644" class="wa-float" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Tombol WhatsApp -->
+    <!-- <a href="https://wa.me/6282110203644?text=Halo%20Eva%20Kitchen%2C%20saya%20ingin%20pesan%20catering"
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="Hubungi via whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
+       alt="whatsapp"
+       class="whatsapp-icon">
+    </a> -->
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
@@ -151,7 +157,7 @@
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Anda bisa menghubungi kami melalui WhatsApp atau mengisi formulir kontak di situs ini. Tim kami akan segera membantu Anda.
+                            Anda bisa menghubungi kami melalui whatsapp atau mengisi formulir kontak di situs ini. Tim kami akan segera membantu Anda.
                         </div>
                     </div>
                 </div>
@@ -183,32 +189,37 @@
         </div>
     </section>
 
-    <section id="kontak" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Hubungi Kami</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form>
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control form-control-lg" id="nama" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control form-control-lg" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="pesan" class="form-label">Pesan Anda</label>
-                            <textarea class="form-control form-control-lg" id="pesan" rows="5" required></textarea>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg">Kirim Pesan</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section id="kontak" class="py-5 bg-light">
+     <div class="container">
+         <h2 class="text-center mb-4 section-title">Hubungi Kami</h2>
+         <p class="text-center mb-4 section-subtitle">Jangan ragu untuk mengirimkan pertanyaan atau permintaan Anda.</p>
+         <div class="row justify-content-center">
+             <div class="col-md-8">
+                 <form action="https://formspree.io/f/xwpbwbgw" method="POST">
+                     <div class="mb-3">
+                         <label for="nama" class="form-label">Nama Lengkap Anda</label>
+                         <input type="text" class="form-control form-control-lg" id="nama" name="nama_lengkap" required>
+                     </div>
+                     <div class="mb-3">
+                         <label for="email" class="form-label">Email Anda</label>
+                         <input type="email" class="form-control form-control-lg" id="email" name="email_pengirim" required>
+                     </div>
+                     <div class="mb-3">
+                         <label for="subjek" class="form-label">Subjek Pesan Anda</label>
+                         <input type="text" class="form-control form-control-lg" id="subjek" name="subjek_pesan" required>
+                     </div>
+                     <div class="mb-3">
+                         <label for="pesan" class="form-label">Pesan Anda</label>
+                         <textarea class="form-control form-control-lg" id="pesan" name="isi_pesan" rows="5" required></textarea>
+                     </div>
+                     <div class="d-grid">
+                         <button type="submit" class="btn btn-primary btn-lg">Kirim Pesan</button>
+                     </div>
+                 </form>
+             </div>
+         </div>
+     </div>
+ </section>
 
     <footer class="text-center py-4">
     <div class="container">
@@ -230,5 +241,22 @@
     // Find the element by its ID and update its text content
     document.getElementById('currentYear').textContent = year;
 </script>
+<script>
+    window.intergramId = "-1002579359364"; // Ganti dengan ID Telegram Anda
+    window.intergramCustomizations = {
+        titleClosed: 'Butuh bantuan?',
+        titleOpen: 'Admin Chat',
+        introMessage: 'Halo! Ada yang bisa kami bantu ?',
+        autoResponse: 'Terima kasih telah menghubungi EVA KITCHEN. Admin akan segera membalas pesan Anda.',
+        autoNoResponse: 'Maaf, Admin sedang offline. Silahkan tinggalkan pesan, Kami akan segera menghubungi Anda jika sudah online.',
+        mainColor: "#229ED9", // Biru ala Telegram
+        alwaysUseFloatingButton: true,
+        buttonIcon: `
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="32" height="32" style="border-radius: 50%;" />
+        `
+    };
+</script>
+<script id="intergram" type="text/javascript" src="https://www.intergram.xyz/js/widget.js"></script>
+</div>
 </body>
 </html>
